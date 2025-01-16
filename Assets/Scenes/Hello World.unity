@@ -660,7 +660,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 704535041}
         m_TargetAssemblyTypeName: HelloWorld, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: ChangeText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
