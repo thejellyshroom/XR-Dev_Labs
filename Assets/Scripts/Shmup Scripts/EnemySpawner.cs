@@ -9,8 +9,8 @@ public class EnemySpawner : MonoBehaviour
     private float enemySpawnScale = 0.2f;
     public float spawnTime = 2f;
     private Vector3 spawnPosition;
-    public float speed = 1.1f;
-
+    [SerializeField] Vector2 verticalSpeedRange = new Vector2(-20, 20);
+    [SerializeField] Vector2 horizontalSpeedRange = new Vector2(5, 20);
 
     private Vector2 verticalRange = new Vector2(-20, 20);
 
@@ -29,8 +29,9 @@ public class EnemySpawner : MonoBehaviour
         //assign the tag to the enemy
         enemy.tag = "Enemy";
 
-        float randomVerticalSpeed = Random.Range(verticalRange.x, verticalRange.y);
-        float randomSpeed = Random.Range(5f, 20f);
+        float randomVerticalSpeed = Random.Range(verticalSpeedRange.x, verticalSpeedRange.y);
+        float randomSpeed = Random.Range(horizontalSpeedRange.x, horizontalSpeedRange.y);
+
         EnemyBehavior movementComponent = enemy.AddComponent<EnemyBehavior>();
         movementComponent.Initialize(randomSpeed, randomVerticalSpeed);
     }

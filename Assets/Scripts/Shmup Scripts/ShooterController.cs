@@ -13,6 +13,9 @@ public class ShooterController : MonoBehaviour
     private float XSpeed;
     private float YSpeed;
 
+    private Vector2 verticalRange = new Vector2(-20, 20);
+
+
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -29,6 +32,15 @@ public class ShooterController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Shoot();
+        }
+
+        if (transform.position.y > verticalRange.y)
+        {
+            transform.position = new Vector3(transform.position.x, verticalRange.y, transform.position.z);
+        }
+        else if (transform.position.y < verticalRange.x)
+        {
+            transform.position = new Vector3(transform.position.x, verticalRange.x, transform.position.z);
         }
     }
 
@@ -57,12 +69,9 @@ public class ShooterController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            GameOver();
+            FindFirstObjectByType<ScoreCounter>().GameOver();
         }
     }
 
-    private void GameOver()
-    {
-        Debug.Log("Game Over");
-    }
+
 }

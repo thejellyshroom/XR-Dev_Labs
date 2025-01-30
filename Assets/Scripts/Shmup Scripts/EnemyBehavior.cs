@@ -28,6 +28,7 @@ public class EnemyBehavior : MonoBehaviour
         if (transform.position.x < destroyBoundaryX)
         {
             Destroy(gameObject);
+            GameObject.FindFirstObjectByType<ScoreCounter>().AddScore(1);
         }
     }
 }

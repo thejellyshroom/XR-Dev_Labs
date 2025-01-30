@@ -11,15 +11,24 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Hello World.unity
     guid: 63ffd3b1dc1754974a72981cfc96a62d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Marble Physics - 1.unity
     guid: 29d6961a320d646909b0c926cdf1ee77
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Marble Physics - 2.unity
     guid: 80c07c26f51404011973ccb910aa0804
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Marble Physics - 3.unity
     guid: d34b3c1a4b47d4f0f8deef306992e5c2
+  - enabled: 1
+    path: Assets/Scenes/Shmup - 1.unity
+    guid: 9158b7d6e0dba4c608ea7baea0902054
+  - enabled: 1
+    path: Assets/Scenes/Shmup - 2.unity
+    guid: 37139af99bcfd4abd9c90cd621c79b5b
+  - enabled: 1
+    path: Assets/Scenes/Shmup - 3.unity
+    guid: c00b43478a0674eb98b25e0ea95594aa
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -8,6 +8,8 @@ public class BulletBehavior : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            GameObject.FindFirstObjectByType<ScoreCounter>().AddScore(1);
+
         }
     }
 }
