@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shmup - 3.unity
     guid: c00b43478a0674eb98b25e0ea95594aa
+  - enabled: 0
+    path: Assets/Scenes/Random Generation.unity
+    guid: 04f98cba4e9164e34af2ef3e6953dd91
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
