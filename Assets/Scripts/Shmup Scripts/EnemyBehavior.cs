@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
+
     private float horizontalSpeed;
     private float verticalSpeed;
 

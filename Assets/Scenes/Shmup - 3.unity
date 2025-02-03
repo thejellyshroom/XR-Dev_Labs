@@ -718,6 +718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 367509041}
   bulletPrefab: {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
+  shootSound: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
   firePointOffset: {x: 5, y: 0, z: 0}
   speed: 20
   bulletSpeed: 50
@@ -774,103 +776,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 35.40141, y: 8.469864, z: 55.832493}
   m_Center: {x: 7.572176e-15, y: 4.234932, z: -2.791971}
---- !u!82 &367509046
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367509036}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &618063319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,9 +1299,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3888284940339953245, guid: e215d4550353d0948be4d3f890efed0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 367509043}
-    - targetCorrespondingSourceObject: {fileID: 3888284940339953245, guid: e215d4550353d0948be4d3f890efed0e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 367509046}
   m_SourcePrefab: {fileID: 100100000, guid: e215d4550353d0948be4d3f890efed0e, type: 3}
 --- !u!1 &1331615707
 GameObject:
@@ -1409,6 +1311,7 @@ GameObject:
   - component: {fileID: 1331615708}
   - component: {fileID: 1331615709}
   - component: {fileID: 1331615710}
+  - component: {fileID: 1331615711}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1467,6 +1370,19 @@ MonoBehaviour:
   - Shmup - 2
   - Shmup - 3
   sceneIndex: 0
+--- !u!114 &1331615711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331615707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad6bf666150c41688813cfe188e0dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundObj: {fileID: 8273969999577486218, guid: f72668a351fac4792b12941a35af60ef, type: 3}
 --- !u!1 &1603517788
 GameObject:
   m_ObjectHideFlags: 0

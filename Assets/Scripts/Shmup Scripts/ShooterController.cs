@@ -4,6 +4,8 @@ public class ShooterController : MonoBehaviour
 {
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] AudioClip shootSound;
+    [SerializeField] AudioClip enemyDeathSound;
 
     public Vector3 firePointOffset = new Vector3(5, 0, 0);
 
@@ -46,6 +48,7 @@ public class ShooterController : MonoBehaviour
 
     private void Shoot()
     {
+        SoundFXManager.instance.PlaySound(shootSound, firePoint, 1.0f);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position + firePointOffset, firePoint.rotation);
         //dynamically add a Rigidbody and add force
         bullet.AddComponent<Rigidbody>();
@@ -53,6 +56,8 @@ public class ShooterController : MonoBehaviour
         BoxCollider collider = bullet.AddComponent<BoxCollider>();
         collider.isTrigger = true;
         bullet.AddComponent<BulletBehavior>();
+        bullet.GetComponent<BulletBehavior>().enemyDeathSound = enemyDeathSound;
+
         rb.useGravity = false;
         rb.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
 

@@ -721,6 +721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 367509041}
   bulletPrefab: {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
+  shootSound: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
   firePointOffset: {x: 5, y: 0, z: 0}
   speed: 20
   bulletSpeed: 50
@@ -1176,6 +1178,7 @@ GameObject:
   - component: {fileID: 1331615708}
   - component: {fileID: 1331615709}
   - component: {fileID: 1331615710}
+  - component: {fileID: 1331615711}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1234,6 +1237,19 @@ MonoBehaviour:
   - Shmup - 2
   - Shmup - 3
   sceneIndex: 2
+--- !u!114 &1331615711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331615707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad6bf666150c41688813cfe188e0dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundObj: {fileID: 8273969999577486218, guid: f72668a351fac4792b12941a35af60ef, type: 3}
 --- !u!1 &1635724146
 GameObject:
   m_ObjectHideFlags: 0

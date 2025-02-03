@@ -34,6 +34,7 @@ public class ScoreCounter : MonoBehaviour
     public void ReloadScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void GameOver()
