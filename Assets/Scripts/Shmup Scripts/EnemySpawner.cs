@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         float randomVerticalSpeed = Random.Range(verticalSpeedRange.x, verticalSpeedRange.y);
         float randomSpeed = Random.Range(horizontalSpeedRange.x, horizontalSpeedRange.y);
 
-        EnemyBehavior movementComponent = enemy.AddComponent<EnemyBehavior>();
+        EnemyBehavior movementComponent = enemy.GetComponent<EnemyBehavior>();
         movementComponent.Initialize(randomSpeed, randomVerticalSpeed);
     }
 }

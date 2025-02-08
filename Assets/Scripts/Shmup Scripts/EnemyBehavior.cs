@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject collisionParticles;
 
     private float horizontalSpeed;
     private float verticalSpeed;
@@ -31,5 +31,10 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(gameObject);
             GameObject.FindFirstObjectByType<ScoreCounter>().AddScore(1);
         }
+    }
+
+    public GameObject getCollisionParticles()
+    {
+        return collisionParticles;
     }
 }

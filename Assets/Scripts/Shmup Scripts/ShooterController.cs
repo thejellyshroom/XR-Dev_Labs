@@ -4,8 +4,10 @@ public class ShooterController : MonoBehaviour
 {
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject collisionParticles;
     [SerializeField] AudioClip shootSound;
     [SerializeField] AudioClip enemyDeathSound;
+    [SerializeField] private AudioClip playerDeathSound;
 
     public Vector3 firePointOffset = new Vector3(5, 0, 0);
 
@@ -21,6 +23,9 @@ public class ShooterController : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
+        this.transform.position = new Vector3(-24.9f, 0, 0);
+        this.transform.rotation = Quaternion.Euler(0, 90, 0);
+        this.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
     }
 
     void Update()
@@ -55,8 +60,7 @@ public class ShooterController : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         BoxCollider collider = bullet.AddComponent<BoxCollider>();
         collider.isTrigger = true;
-        bullet.AddComponent<BulletBehavior>();
-        bullet.GetComponent<BulletBehavior>().enemyDeathSound = enemyDeathSound;
+        bullet.AddComponent<BulletBehavior>().enemyDeathSound = enemyDeathSound;
 
         rb.useGravity = false;
         rb.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
@@ -73,9 +77,24 @@ public class ShooterController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(collisionParticles, transform.position, Quaternion.identity);
+            SoundFXManager.instance.PlaySound(playerDeathSound, transform, 1.0f);
+
+            //set audio resource to new audio clip after game over is called
+            PlayGameOverMusic();
+            //2 second delay to call gameover
+            FindFirstObjectByType<ScoreCounter>().Invoke("GameOver", 1.0f);
             Destroy(gameObject);
-            FindFirstObjectByType<ScoreCounter>().GameOver();
+
+
         }
+    }
+
+    private void PlayGameOverMusic()
+    {
+        MusicManager.instance.GetComponent<AudioSource>().clip = MusicManager.instance.GetGameOverMusic();
+        MusicManager.instance.GetComponent<AudioSource>().Play();
+        MusicManager.instance.GetComponent<AudioSource>().loop = false;
     }
 
 
