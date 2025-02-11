@@ -2,11 +2,13 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject winUI;
 
     public int targetScore = 10;
     private int score = 0;
@@ -25,8 +27,13 @@ public class ScoreCounter : MonoBehaviour
     {
         if (score == targetScore)
         {
+            if (sceneIndex == 0)
+            {
+                winUI.SetActive(true);
+                Time.timeScale = 0;
+                return;
+            }
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneNames[sceneIndex]);
-
         }
     }
 
