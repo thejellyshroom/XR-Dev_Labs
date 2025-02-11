@@ -85,8 +85,6 @@ public class ShooterController : MonoBehaviour
             //2 second delay to call gameover
             FindFirstObjectByType<ScoreCounter>().Invoke("GameOver", 1.0f);
             Destroy(gameObject);
-
-
         }
     }
 

@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     private Quaternion enemyRotation = Quaternion.Euler(0, 270, 0);
     private float enemySpawnScale = 0.2f;
+    [SerializeField] float secondEnemySpawnRate = 0.5f;
     public float spawnTime = 2f;
     private Vector3 spawnPosition;
     [SerializeField] Vector2 verticalSpeedRange = new Vector2(-20, 20);
@@ -25,14 +26,23 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemy = Instantiate(enemyPrefab, spawnPosition, enemyRotation);
         enemy.transform.localScale = new Vector3(enemySpawnScale, enemySpawnScale, enemySpawnScale);
         enemy.GetComponent<BoxCollider>().isTrigger = true;
-
-        //assign the tag to the enemy
-        enemy.tag = "Enemy";
-
         float randomVerticalSpeed = Random.Range(verticalSpeedRange.x, verticalSpeedRange.y);
         float randomSpeed = Random.Range(horizontalSpeedRange.x, horizontalSpeedRange.y);
 
-        EnemyBehavior movementComponent = enemy.GetComponent<EnemyBehavior>();
-        movementComponent.Initialize(randomSpeed, randomVerticalSpeed);
+        // Randomly assign the enemy type based on rate
+        float enemyType = Random.Range(0f, 1f);
+        if (enemyType < secondEnemySpawnRate)
+        {
+            SecondEnemy movementComponent = enemy.AddComponent<SecondEnemy>();
+            movementComponent.Initialize(randomSpeed);
+        }
+        else
+        {
+            EnemyBehavior movementComponent = enemy.AddComponent<EnemyBehavior>();
+            movementComponent.Initialize(randomSpeed, randomVerticalSpeed);
+        }
+
+        //assign the tag to the enemy
+        enemy.tag = "Enemy";
     }
 }

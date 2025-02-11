@@ -687,9 +687,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735800313}
     m_Modifications:
+    - target: {fileID: 941383934104902208, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941383934104902208, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941383934104902208, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 941383934104902208, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -260.01178
+      objectReference: {fileID: 0}
     - target: {fileID: 948280611322582163, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
       propertyPath: m_Name
       value: Game Over
+      objectReference: {fileID: 0}
+    - target: {fileID: 948280611322582163, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187115348884294370, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -778,6 +798,22 @@ PrefabInstance:
     - target: {fileID: 6318859251176642264, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521892020899391573, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521892020899391573, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521892020899391573, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521892020899391573, guid: bab5a54061e354a379bdeb7ec16643f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -165.0118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -962,6 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4591554990895830037, guid: f568d8550bbda43ea8d6be077131dc52, type: 3}
+  secondEnemySpawnRate: 0.5
   spawnTime: 2
   verticalSpeedRange: {x: -20, y: 20}
   horizontalSpeedRange: {x: 10, y: 20}

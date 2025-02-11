@@ -10,7 +10,18 @@ public class BulletBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             SoundFXManager.instance.PlaySound(enemyDeathSound, other.transform, 1.0f);
-            GameObject particles = other.gameObject.GetComponent<EnemyBehavior>().getCollisionParticles();
+            GameObject particles;
+
+            if (other.gameObject.GetComponent<EnemyBehavior>() == null)
+            {
+                particles = other.gameObject.GetComponent<SecondEnemy>().getCollisionParticles();
+            }
+            else
+            {
+                particles = other.gameObject.GetComponent<EnemyBehavior>().getCollisionParticles();
+            }
+            // GameObject particles = other.gameObject.GetComponent<EnemyBehavior>().getCollisionParticles();
+
 
             Instantiate(particles, transform.position, Quaternion.identity);
 
