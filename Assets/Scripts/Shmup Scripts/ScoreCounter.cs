@@ -30,7 +30,12 @@ public class ScoreCounter : MonoBehaviour
             if (sceneIndex == 0)
             {
                 winUI.SetActive(true);
-                Time.timeScale = 0;
+                //stop enemy spawn and freeze player movement
+                EnemySpawner enemySpawner = FindFirstObjectByType<EnemySpawner>();
+                enemySpawner.CancelInvoke();
+
+                ShooterController shooterController = FindFirstObjectByType<ShooterController>();
+                shooterController.enabled = false;
                 return;
             }
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneNames[sceneIndex]);
